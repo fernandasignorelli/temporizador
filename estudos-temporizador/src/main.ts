@@ -7,9 +7,9 @@ import router from './router'
 // Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faStop, faClock, faHome, faFolder } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlay, faStop)
+library.add(faPlay, faStop, faClock,faHome, faFolder)
 
 const app = createApp(App)
 app.use(createPinia())

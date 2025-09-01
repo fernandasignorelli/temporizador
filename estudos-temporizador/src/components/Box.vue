@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full p-4 rounded shadow font-bold mx-auto" :style="estilos">
+  <div class="w-full p-4 rounded shadow font-semibold mx-auto" :style="estilos">
     <slot></slot>
   </div>
 </template>

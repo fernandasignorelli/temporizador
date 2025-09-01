@@ -4,7 +4,7 @@
       <div class="flex-1" role="form" aria-label="Formulário para criação de uma nova tarefa">
         <input
           type="text"
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:ring-[--color-purple-300]"
           placeholder="Qual tarefa você deseja iniciar?"
           v-model="descricao"
         />

@@ -1,6 +1,7 @@
 <template>
   <section>
-    <strong class="text-xl font-mono text-[var(--texto-primario)]">
+    <font-awesome-icon :icon="['fa', 'clock']" class="mr-2 text-[var(--color-purple-300)]"/>
+    <strong class="text-sm font-semibold text-[var(--color-purple-300)]">
       {{ tempoDecorrido }}
     </strong>
   </section>
