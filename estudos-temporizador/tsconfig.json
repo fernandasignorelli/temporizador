@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/shared/components/*"],
+      "@helpers/*": ["./src/shared/helpers/*"],
+      "@services/*": ["./src/shared/services/*"],
+      "@stores/*": ["./src/shared/stores/*"]
+    }
+  },
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "nightwatch.conf.*",
+    "playwright.config.*"
+  ],
+  "exclude": ["src/**/__tests__/*"]
+}
