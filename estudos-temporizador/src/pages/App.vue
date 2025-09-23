@@ -23,7 +23,7 @@ import BarraLateral from '@/components/BarraLateral.vue'
 import Formulario from '@/components/Formulario.vue'
 import Tarefa from '@/components/Tarefa.vue'
 import Box from '@/components/Box.vue'
-import type { ITarefa } from '@/shared/types/ITarefa'
+import type { ITarefa } from '@/components/interface/ITarefa'
 
 export default defineComponent({
   name: 'App',
