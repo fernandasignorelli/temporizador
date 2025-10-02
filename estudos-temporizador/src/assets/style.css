@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-purple-300: #4B0082;
+  --color-purple-200: #D8B7DD;
+}
+
+main {
+  --bg-primario: #fff;
+  --texto-primario: #000;
+}
+
+main.modo-escuro {
+  --bg-primario: #2b2d42;
+  --texto-primario: #000;
+}
+
+.conteudo {
+  background-color: var(--bg-primario);
+}

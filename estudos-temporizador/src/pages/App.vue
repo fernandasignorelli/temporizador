@@ -4,7 +4,7 @@
 
     <div class="flex w-3/4 items-center justify-center">
       <div
-        class="bg-[--color-purple-200] border border-[--color-purple-300] rounded-md p-10 h-fit w-3/4 gap-4 flex flex-col mx-auto">
+        class="bg-[--color-purple-200] border border-[--color-purple-300] rounded-md p-10 h-fit w-auto gap-4 flex flex-col mx-auto">
         <Formulario @aoSalvarTarefa="salvarTarefa" />
         <div class="lista space-y-4">
           <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa" />
@@ -54,24 +54,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style>
-:root {
-  --color-purple-300: #4B0082;
-  --color-purple-200: #D8B7DD;
-}
-
-main {
-  --bg-primario: #fff;
-  --texto-primario: #000;
-}
-
-main.modo-escuro {
-  --bg-primario: #2b2d42;
-  --texto-primario: #000;
-}
-
-.conteudo {
-  background-color: var(--bg-primario);
-}
-</style>

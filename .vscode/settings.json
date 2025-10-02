@@ -9,5 +9,6 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

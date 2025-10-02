@@ -4,11 +4,25 @@
       <div class="flex-1" role="form" aria-label="Formulário para criação de uma nova tarefa">
         <input
           type="text"
-          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:ring-[--color-purple-300]"
+          class="w-[300px] border border-gray-300 rounded px-5 py-2 focus:outline-none focus:ring focus:ring-[--color-purple-300]"
           placeholder="Qual tarefa você deseja iniciar?"
           v-model="descricao"
         />
       </div>
+
+      <!-- seletor de projeto -->
+      <div class="w-full lg:w-auto">
+        <select
+          v-model="idProjeto"
+          class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring focus:ring-[--color-purple-300]"
+        >
+          <option disabled value="">Selecione um projeto</option>
+          <option v-for="p in projetos" :key="p.id" :value="p.id">
+            {{ p.nome }}
+          </option>
+        </select>
+      </div>
+
       <div class="w-full lg:w-auto">
         <Temporizador @aoTemporizadorFinalizado="finalizarTarefa" />
       </div>
@@ -17,28 +31,43 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent, computed } from 'vue'
 import Temporizador from './Temporizador.vue'
+import { useStore } from 'vuex'
+import { key } from '@/shared/stores'
 
 export default defineComponent({
-  name: "Formulário",
+  name: 'Formulário',
   emits: ['aoSalvarTarefa'],
-  components: {
-    Temporizador
-  },
+  components: { Temporizador },
+
   data() {
     return {
-      descricao: ''
+      descricao: '',
+      idProjeto: ''
     }
   },
+
   methods: {
     finalizarTarefa(tempoDecorrido: number): void {
+      const projetoSelecionado =
+        this.projetos.find((proj: any) => String(proj.id) === String(this.idProjeto)) ?? null
+
       this.$emit('aoSalvarTarefa', {
         duracaoEmSegundos: tempoDecorrido,
-        descricao: this.descricao
+        descricao: this.descricao,
+        projeto: projetoSelecionado
       })
+
       this.descricao = ''
+      this.idProjeto = ''
     }
+  },
+
+  setup() {
+    const store = useStore(key)
+    const projetos = computed(() => store.state.projetos)
+    return { projetos }
   }
 })
 </script>

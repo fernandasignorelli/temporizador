@@ -20,7 +20,6 @@
       </ul>
     </nav>
   </header>
-
 </template>
 
 <script lang="ts">
